@@ -48,6 +48,8 @@ export function loginHandler(input) {
             }
 
             localStorage.setItem('access_token', data.access_token) 
+            localStorage.setItem('fullName', data.fullName) 
+            localStorage.setItem('role', data.role) 
 
             
         } catch (error) {

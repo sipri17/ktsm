@@ -21,7 +21,9 @@ class Controller {
             const access_token = generateToken(payload)
 
             res.status(200).json({
-                access_token
+                access_token,
+                fullName:user.username,
+                role:user.role
             })
         } catch (error) {
             next(error)

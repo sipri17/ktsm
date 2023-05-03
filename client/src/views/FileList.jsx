@@ -9,6 +9,9 @@ import baseUrl from '../utilities/baseUrl'
 
 export default function FileList() {
 
+    const fullName = localStorage.fullName
+    const role = localStorage.role
+
     const { files } = useSelector(state => state.files)
     const dispatch = useDispatch()
 
@@ -86,8 +89,7 @@ export default function FileList() {
         dispatch(fetchFiles())
     }, [])
 
-    console.log("files:", files);
-
+    
 
 
 
@@ -95,8 +97,9 @@ export default function FileList() {
     if (files[0]) return (
         <>
             <div className='container'>
+                <h1>Welcome {fullName} ({role})</h1>
                 <div className='d-flex justify-content-between'>
-                    <h1> File List</h1>
+                    <h2> File List</h2>
                     {/* <Link to='/movieForm' >
                         <button id='detailButton' className='btn btn-info my-2 '> Create Movie </button>
                     </Link> */}
